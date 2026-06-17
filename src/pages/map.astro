@@ -4,5 +4,26 @@ import Layout from "../layouts/layouts.astro";
 
 <Layout title="Map | Nardelli">
 	<h1>Interactive Map</h1>
-	<p>Embed your Google My Maps here (next step).</p>
+
+	<p>
+		<a
+			href="https://www.google.com/maps/d/viewer?mid=17GPJ5eNXHo-2HNj_KNS6r1HLe_Nhqlc&usp=sharing"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Open map in Google Maps
+		</a>
+	</p>
+
+	<div style="width: 100%; height: 75vh; min-height: 520px; border: 1px solid #eee; border-radius: 12px; overflow: hidden;">
+		<iframe
+			title="Nardelli Map"
+			src="https://www.google.com/maps/d/embed?mid=17GPJ5eNXHo-2HNj_KNS6r1HLe_Nhqlc&ehbc=2E312F&noprof=1"
+			width="100%"
+			height="100%"
+			style="border:0;"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+	</div>
 </Layout>
