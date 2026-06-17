@@ -1,17 +1,16 @@
 ---
-
+import Layout from "../layouts/layouts.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Nardelli">
+	<h1>Welcome</h1>
+	<p>This is the guest guide for Nardelli.</p>
+
+	<ul>
+		<li><a href="/quick-start">Quick Start</a></li>
+		<li><a href="/house-manual">House Manual</a></li>
+		<li><a href="/local-essentials">Local Essentials</a></li>
+		<li><a href="/day-trips">Day Trips</a></li>
+		<li><a href="/map">Interactive Map</a></li>
+	</ul>
+</Layout>
