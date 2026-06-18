@@ -10,31 +10,106 @@ const { title = "Nardelli" } = Astro.props;
 		<title>{title}</title>
 		<style>
 			:root { --max: 900px; }
+
 			body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
-			header { border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; }
-			.wrap { max-width: var(--max); margin: 0 auto; padding: 16px; }
-			nav { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; }
+			header { border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 10; }
+			.wrap { max-width: var(--max); margin: 0 auto; padding: 12px 16px; }
+
+			.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+			.brand { font-weight: 700; }
+
 			nav a { text-decoration: none; color: #111; padding: 6px 8px; border-radius: 8px; }
 			nav a:hover { background: #f3f3f3; }
+
 			main { max-width: var(--max); margin: 0 auto; padding: 20px 16px 48px; }
 			h1 { margin-top: 0; }
+
+			/* Desktop nav */
+			.nav-desktop { display: none; gap: 10px; align-items: center; flex-wrap: nowrap; white-space: nowrap; }
+
+			/* Mobile menu button */
+			.menu-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: #fff;
+			border: 1px solid #e6e6e6;
+			border-radius: 10px;
+			padding: 8px 10px;
+			font-size: 14px;
+			}
+
+			/* Mobile dropdown */
+			.nav-mobile {
+			display: none;
+			padding-top: 10px;
+			}
+			.nav-mobile.open { display: block; }
+			.nav-mobile a {
+			display: block;
+			padding: 10px 10px;
+			border-radius: 10px;
+			}
+
+			/* Breakpoint: show desktop nav on wider screens */
+			@media (min-width: 860px) {
+			.menu-btn { display: none; }
+			.nav-desktop { display: inline-flex; }
+			.nav-mobile { display: none !important; }
+			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<div class="wrap">
-				<div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px;">
-					<strong>Nardelli</strong>
-					<nav>
-						<a href="/quick-start">Quick Start</a>
-						<a href="/house">Our House &amp; Neighbours</a>
-						<a href="/essentials">Castiglione del Lago: Essentials &amp; Sights</a>
-						<a href="/restaurants">Nearby Restaurants</a>
-						<a href="/day-trips">Day Trips</a>
-						<a href="/leaving-checklist">Leaving Checklist</a>
-					</nav>
-				</div>
-			</div>
+	<div class="wrap">
+		<div class="topbar">
+			<div class="brand">Nardelli</div>
+
+			<nav class="nav-desktop" aria-label="Primary">
+				<a href="/quick-start">Quick Start</a>
+				<a href="/house">Our House &amp; Neighbours</a>
+				<a href="/essentials">Castiglione del Lago: Essentials &amp; Sights</a>
+				<a href="/restaurants">Nearby Restaurants</a>
+				<a href="/day-trips">Day Trips</a>
+				<a href="/leaving-checklist">Leaving Checklist</a>
+			</nav>
+
+			<button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">
+				Menu
+			</button>
+		</div>
+
+		<nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+			<a href="/quick-start">Quick Start</a>
+			<a href="/house">Our House &amp; Neighbours</a>
+			<a href="/essentials">Castiglione del Lago: Essentials &amp; Sights</a>
+			<a href="/restaurants">Nearby Restaurants</a>
+			<a href="/day-trips">Day Trips</a>
+			<a href="/leaving-checklist">Leaving Checklist</a>
+		</nav>
+	</div>
+
+	<script is:inline>
+	const btn = document.querySelector(".menu-btn");
+	const nav = document.querySelector("#mobile-nav");
+
+	function setOpen(open) {
+		if (!btn || !nav) return;
+		nav.classList.toggle("open", open);
+		btn.setAttribute("aria-expanded", String(open));
+	}
+
+	if (btn && nav) {
+		btn.addEventListener("click", () => {
+			const isOpen = nav.classList.contains("open");
+			setOpen(!isOpen);
+		});
+
+		nav.querySelectorAll("a").forEach((a) => {
+			a.addEventListener("click", () => setOpen(false));
+		});
+	}
+</script>
 		</header>
 
 		<main>
