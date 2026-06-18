@@ -9,61 +9,178 @@ const { title = "Nardelli" } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
 		<style>
-			:root { --max: 900px; }
+:root {
+	--max: 900px;
 
-			body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
-			header { border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 10; }
-			.wrap { max-width: var(--max); margin: 0 auto; padding: 12px 16px; }
+	/* Warm villa palette */
+	--bg: #fbfaf7;
+	--card: #ffffff;
+	--text: #1f2937;
+	--muted: #6b7280;
+	--border: #e7e5e4;
+	--accent: #2f6f5e;
+	--accentHover: #255a4c;
+	--highlight: #d97706;
 
-			.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-			.brand { font-weight: 700; }
+	--radius: 12px;
+}
 
-			nav a { text-decoration: none; color: #111; padding: 6px 8px; border-radius: 8px; }
-			nav a:hover { background: #f3f3f3; }
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	line-height: 1.5;
+	background: var(--bg);
+	color: var(--text);
+}
 
-			main { max-width: var(--max); margin: 0 auto; padding: 20px 16px 48px; }
-			h1 { margin-top: 0; }
+header {
+	border-bottom: 1px solid var(--border);
+	background: var(--card);
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	box-shadow: 0 1px 0 rgba(31, 41, 55, 0.06);
+}
 
-			/* Desktop nav */
-			.nav-desktop { display: none; gap: 10px; align-items: center; flex-wrap: nowrap; white-space: nowrap; }
+/* Thin green accent strip under the header */
+header::after {
+	content: "";
+	display: block;
+	height: 3px;
+	background: var(--accent);
+	opacity: 0.9;
+}
 
-			/* Mobile menu button */
-			.menu-btn {
-			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-			background: #fff;
-			border: 1px solid #e6e6e6;
-			border-radius: 10px;
-			padding: 8px 10px;
-			font-size: 14px;
-			}
+.wrap {
+	max-width: var(--max);
+	margin: 0 auto;
+	padding: 12px 16px;
+}
 
-			/* Mobile dropdown */
-			.nav-mobile {
-			display: none;
-			padding-top: 10px;
-			}
-			.nav-mobile.open { display: block; }
-			.nav-mobile a {
-			display: block;
-			padding: 10px 10px;
-			border-radius: 10px;
-			}
+.topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
 
-			/* Breakpoint: show desktop nav on wider screens */
-			@media (min-width: 860px) {
-			.menu-btn { display: none; }
-			.nav-desktop { display: inline-flex; }
-			.nav-mobile { display: none !important; }
-			}
+.brand {
+	font-weight: 800;
+	letter-spacing: 0.3px;
+	color: var(--accentHover);
+	text-decoration: none;
+}
+.brand:hover {
+	color: var(--accent);
+}
+
+main {
+	max-width: var(--max);
+	margin: 18px auto 0;
+	padding: 20px 16px 48px;
+}
+main > :first-child {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 18px;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 32px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+}
+
+h1::after {
+	content: "";
+	display: block;
+	width: 64px;
+	height: 4px;
+	margin-top: 10px;
+	border-radius: 999px;
+	background: var(--accent);
+	opacity: 0.9;
+}
+
+h2 {
+	margin-top: 28px;
+	color: var(--accentHover);
+	letter-spacing: -0.01em;
+}
+
+a {
+	color: var(--accent);
+}
+nav a:hover {
+	background: rgba(47, 111, 94, 0.12);
+}
+
+nav a {
+	text-decoration: none;
+	color: var(--text);
+	padding: 6px 10px;
+	border-radius: 10px;
+}
+
+nav a:hover {
+	background: rgba(47, 111, 94, 0.12);
+	color: var(--accentHover);
+}
+
+/* Desktop nav */
+.nav-desktop {
+	display: none;
+	gap: 10px;
+	align-items: center;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+}
+
+/* Mobile menu button */
+.menu-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-size: 14px;
+	color: var(--text);
+}
+.menu-btn:hover {
+	border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+/* Mobile dropdown */
+.nav-mobile {
+	display: none;
+	padding-top: 10px;
+}
+.nav-mobile.open {
+	display: block;
+}
+.nav-mobile a {
+	display: block;
+	padding: 10px 10px;
+	border-radius: 10px;
+}
+
+/* Breakpoint: show desktop nav on wider screens */
+@media (min-width: 860px) {
+	.menu-btn { display: none; }
+	.nav-desktop { display: inline-flex; }
+	.nav-mobile { display: none !important; }
+}
 		</style>
 	</head>
 	<body>
 		<header>
 	<div class="wrap">
 		<div class="topbar">
-			<div class="brand">Nardelli</div>
+			<a class="brand" href="/">Nardelli</a>
 
 			<nav class="nav-desktop" aria-label="Primary">
 				<a href="/quick-start">Quick Start</a>
