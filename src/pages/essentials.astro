@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/layouts.astro";
+import MapEmbed from "../components/MapEmbed.astro";
 ---
 
 <Layout title="Essentials & Sights | Nardelli">
@@ -7,15 +8,8 @@ import Layout from "../layouts/layouts.astro";
 	<p>Supermarket, markets, sights, pool/lake access, and key practical stops.</p>
 
 	<h2>Map</h2>
-	<div style="width: 100%; height: 70vh; min-height: 520px; border: 1px solid #eee; border-radius: 12px; overflow: hidden;">
-		<iframe
-			title="Castiglione del Lago – Essentials & Sights"
-			src="https://www.google.com/maps/d/embed?mid=1zJ13jcduxwEwwZeyF72jELiMLM3u15M&ehbc=2E312F"
-			width="100%"
-			height="100%"
-			style="border:0;"
-			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"
-		></iframe>
-	</div>
+<MapEmbed
+	title="Local Restaurants, Bars & Cafes"
+	src="https://www.google.com/maps/d/embed?mid=1s7yXs9jQ8JVRJrBzack_63GSfhvhT-E&ehbc=2E312F"
+/>
 </Layout>

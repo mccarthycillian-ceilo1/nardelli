@@ -1,21 +1,38 @@
 ---
 import Layout from "../layouts/layouts.astro";
+import MapEmbed from "../components/MapEmbed.astro";
 ---
 
 <Layout title="Our House & Neighbours | Nardelli">
 	<h1>Our House &amp; Neighbours</h1>
-	<p>General instructions and a small map showing the house and nearby neighbours.</p>
+	<p>
+		General house notes, garden access, rubbish/recycling, and neighbour info — plus a map showing the house and nearby neighbours.
+	</p>
 
-	<h2>Neighbours map</h2>
-	<div style="width: 100%; height: 60vh; min-height: 480px; border: 1px solid #eee; border-radius: 12px; overflow: hidden;">
-		<iframe
-			title="Nardelli – Our House & Neighbours"
-			src="https://www.google.com/maps/d/embed?mid=17GPJ5eNXHo-2HNj_KNS6r1HLe_Nhqlc&ehbc=2E312F"
-			width="100%"
-			height="100%"
-			style="border:0;"
-			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"
-		></iframe>
-	</div>
+	<h2>Garden</h2>
+	<p>
+		You can access the garden via the sitting room (keys either by the back door or with the keys by the front door), or through the garden gate at the front of the house.
+	</p>
+	<p>
+		There are tables and chairs, clothes horses, and a paddling pool that can be used in the garden. It can be difficult to maintain the garden; if it’s dry, please water in the mornings or evenings if you can.
+	</p>
+
+	<h2>Rubbish bins &amp; recycling</h2>
+	<p>
+		We don’t have scheduled bin collections, so we tend to empty the bins regularly and recycle bottles and other items as we go.
+	</p>
+	<p>
+		We normally use the recycling and bins at the <strong>COOP supermarket</strong> or near the car park by <strong>Pescatore Cafe</strong> (these are good bins to use).
+	</p>
+
+	<h2>Neighbours</h2>
+	<p>
+		We have lots of lovely neighbours in Nardelli from different parts of Italy, the UK and the US. Please say hello — you can find names and locations on the map below.
+	</p>
+
+	<h2>Map</h2>
+	<MapEmbed
+		title="Nardelli – Our House & Neighbours"
+		src="https://www.google.com/maps/d/embed?mid=17GPJ5eNXHo-2HNj_KNS6r1HLe_Nhqlc&ehbc=2E312F"
+	/>
 </Layout>

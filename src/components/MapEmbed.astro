@@ -1,0 +1,40 @@
+---
+const { title, src } = Astro.props;
+---
+
+<div class="mapWrap">
+	<div class="mapFrame">
+		<iframe
+			title={title}
+			src={src}
+			width="100%"
+			height="100%"
+			style="border:0; display:block;"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+	</div>
+</div>
+
+<style>
+	.mapWrap {
+		max-width: 680px;
+		margin: 0 auto;
+	}
+
+	.mapFrame {
+		width: 100%;
+		height: 680px;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		overflow: hidden;
+		background: var(--card);
+	}
+
+	@media (max-width: 520px) {
+		.mapFrame {
+			height: 70vh;
+			min-height: 480px;
+		}
+	}
+</style>

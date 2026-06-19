@@ -167,14 +167,38 @@ nav a:hover {
 	padding: 10px 10px;
 	border-radius: 10px;
 }
-
 /* Breakpoint: show desktop nav on wider screens */
 @media (min-width: 860px) {
 	.menu-btn { display: none; }
 	.nav-desktop { display: inline-flex; }
 	.nav-mobile { display: none !important; }
 }
-		</style>
+
+/* Shared map sizing (narrow card on desktop, consistent across pages) */
+.mapWrap {
+	max-width: 680px;
+	margin: 0 auto;
+}
+
+.mapFrame {
+	width: 100%;
+	height: 680px;
+	min-height: 680px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow: hidden;
+	background: var(--card);
+	display: block;
+	line-height: 0;
+}
+
+.mapFrame iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+</style>
 	</head>
 	<body>
 		<header>

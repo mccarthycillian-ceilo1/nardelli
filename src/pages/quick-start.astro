@@ -7,6 +7,17 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 	<section class="hero">
 		<h1>Quick Start</h1>
 		<p class="subhead">
+            <section class="section">
+	<h2>First 10 minutes</h2>
+	<ol class="checklist">
+		<li><a href="#parking">Park (don’t block the laneway)</a></li>
+		<li><a href="#keys">Get keys from the lockbox</a></li>
+		<li><a href="#electricity">Turn on electricity (fuse box)</a></li>
+		<li><a href="#mains">Turn on water &amp; gas mains</a></li>
+		<li><a href="#hot-water">Check hot water (boiler button)</a></li>
+		<li><a href="#hob">Check the gas hob is working</a></li>
+	</ol>
+</section>
 			The essentials for arriving, getting set up, and settling in during your first 10 minutes.
 		</p>
 	</section>
@@ -20,7 +31,7 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		<!-- Optional later: add an "Open in Google Maps" link here -->
 	</section>
 
-	<section class="section">
+	<section class="section" id="parking">
 		<h2>Parking</h2>
 		<p>
 			Please park close to the front door. <strong>Do not block the laneway at the side of the house</strong>
@@ -29,7 +40,7 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		<PhotoPlaceholder label="Parking near the front door + ‘do not block laneway’" />
 	</section>
 
-	<section class="section">
+	<section class="section" id="keys">
 		<h2>Keys (lockbox)</h2>
 		<p>
 			There is a lockbox attached to the frame of the garden gate. It contains the key to the{" "}
@@ -50,7 +61,7 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		<PhotoPlaceholder label="Lockbox location + keys" />
 	</section>
 
-	<section class="section">
+	<section class="section" id="electricity">
 		<h2>Electricity (power)</h2>
 		<p>
 			The electricity will most likely be off on arrival. The fuse box is located <strong>just inside the front
@@ -60,7 +71,7 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		<PhotoPlaceholder label="Fuse box + switch in the ON position" />
 	</section>
 
-	<section class="section">
+	<section class="section" id="mains">
 		<h2>Water &amp; gas (mains)</h2>
 		<p>
 			On arrival, the <strong>water and gas mains may be switched off</strong>. The key to open the mains
@@ -74,11 +85,12 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 				Once on, check the water flow, check hot water, and confirm the hob is working.
 			</li>
 		</ol>
+        <div id="hob"></div>
 
 		<PhotoPlaceholder label="Gas mains — ON position" />
 		<PhotoPlaceholder label="Water mains — ON position" />
 
-		<h3>Hot water (boiler)</h3>
+		<h3 id="hot-water">Hot water (boiler)</h3>
 		<p>
 			The button for the boiler is on the wall <strong>between the sink and the fridge</strong>. Once the mains
 			are on, check that hot water is working.
@@ -115,6 +127,16 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		</p>
 	</section>
 
+<section class="section">
+	<h2>If something doesn’t work…</h2>
+	<ul>
+		<li><strong>Power keeps tripping:</strong> don’t run all portable air-con units at the same time (try one floor at a time).</li>
+		<li><strong>No hot water:</strong> confirm water mains are ON, then check the boiler button (between sink and fridge).</li>
+		<li><strong>Gas hob not working:</strong> confirm the gas mains are fully ON.</li>
+		<li><strong>Front door key won’t come out:</strong> turn the key half a turn back, then remove.</li>
+	</ul>
+</section>
+    
 	<section class="section">
 		<h2>Internet (Wi‑Fi)</h2>
 		<p>
@@ -123,47 +145,7 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		</p>
 	</section>
 
-	<section class="section">
-		<h2>Garden</h2>
-		<p>
-			You can access the garden via the sitting room (keys either by the back door or with the keys by the
-			front door), or through the garden gate at the front of the house.
-		</p>
-		<p>
-			There are tables and chairs, clothes horses, and a paddling pool that can be used in the garden. If
-			it’s dry, please water the garden in the mornings or evenings if you can.
-		</p>
-	</section>
 
-	<section class="section">
-		<h2>Rubbish bins &amp; recycling</h2>
-		<p>
-			We don’t have scheduled bin collections, so we tend to empty the bins regularly and recycle bottles and
-			other items as we go.
-		</p>
-		<p>
-			We normally use the recycling and bins at the <strong>COOP supermarket</strong> or near the car park by{" "}
-			<strong>Pescatore Cafe</strong> (these are good bins to use).
-		</p>
-		<!-- Optional later: add a small map link or a pin reference on your Essentials map -->
-	</section>
-
-	<section class="section">
-		<h2>Neighbours</h2>
-		<p>
-			We have lots of lovely neighbours in Nardelli from different parts of Italy, the UK and the US. Please
-			say hello — you can find their names and details on the neighbours map on the{" "}
-			<a href="/house">Our House &amp; Neighbours</a> page.
-		</p>
-	</section>
-
-	<section class="section">
-		<h2>Contact</h2>
-		<p>
-			If you have any issues at all, please message or call any of the family on <strong>WhatsApp</strong>.
-		</p>
-		<!-- Optional later: add specific names + numbers here -->
-	</section>
 
 	<style>
 		.hero { margin-bottom: 12px; }
@@ -210,5 +192,19 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		/* Keep lists readable on mobile */
 		ul, ol { padding-left: 20px; }
 		li { margin: 6px 0; }
-	</style>
+	
+        .checklist {
+	padding-left: 20px;
+}
+.checklist li {
+	margin: 8px 0;
+}
+.checklist a {
+	text-decoration: none;
+}
+.checklist a:hover {
+	text-decoration: underline;
+}
+    
+    </style>
 </Layout>
