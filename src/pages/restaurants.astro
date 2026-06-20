@@ -4,10 +4,39 @@ import MapEmbed from "../components/MapEmbed.astro";
 ---
 
 <Layout title="Nearby Restaurants">
-	<h1>Nearby Restaurants</h1>
-	<p>Curated restaurants, bars, and cafés.</p>
+	<h2>Best Restaurants &amp; Bars</h2>
+
+<ul>
+	<li>
+		Best restaurant in Castiglione del Lago:{" "}
+		<strong><a href="https://maps.app.goo.gl/zMW2GPK3mEPDhKAB9" target="_blank" rel="noopener noreferrer">Osteria Nova</a></strong>
+	</li>
+	<li>
+		Best pizza in Castiglione del Lago:{" "}
+		<strong><a href="https://maps.app.goo.gl/d4Gp6sy9Y1TftEox7" target="_blank" rel="noopener noreferrer">Ristorante La Cantina</a></strong>
+	</li>
+	<li>
+		Best pizza on the lake:{" "}
+		<strong><a href="https://maps.app.goo.gl/zcJmuCnH9tMAPqAm7" target="_blank" rel="noopener noreferrer">Giramondo Ristorante Pizzeria</a></strong>
+	</li>
+	<li>
+		Best beach bar:{" "}
+		<strong><a href="https://maps.app.goo.gl/DpFRrNCo9xxx5rFK8" target="_blank" rel="noopener noreferrer">Cafe Pescatore Praia</a></strong>
+	</li>
+	<li>
+		Best village setting:{" "}
+		<strong><a href="https://maps.app.goo.gl/btDQF23ZRfemdDbF7" target="_blank" rel="noopener noreferrer">Panicale</a></strong>
+	</li>
+	<li>
+		Best sushi:{" "}
+		<strong><a href="https://maps.app.goo.gl/SVa9ZSDdKi2U8Br27" target="_blank" rel="noopener noreferrer">Restaurant Sushi Mizu</a></strong>
+	</li>
+</ul>
 
 	<h2>Map</h2>
+    <p style="color: var(--muted); margin-top: -6px;">
+	Click pinned items on the map for additional insight and detail.
+</p>
 <MapEmbed
 	title="Local Restaurants, Bars & Cafes"
 	src="https://www.google.com/maps/d/embed?mid=1s7yXs9jQ8JVRJrBzack_63GSfhvhT-E&ehbc=2E312F"
