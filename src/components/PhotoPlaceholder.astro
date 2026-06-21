@@ -8,3 +8,32 @@ const { label } = Astro.props;
 		<div class="photoLabel">{label}</div>
 	</div>
 </div>
+
+<style>
+	.photo {
+		margin-top: 10px;
+		border: 1px dashed rgba(37, 90, 76, 0.35);
+		border-radius: var(--radius);
+		background: rgba(251, 250, 247, 0.6);
+		padding: 12px;
+	}
+
+	.photoInner {
+		display: grid;
+		gap: 4px;
+	}
+
+	.photoTitle {
+		font-weight: 800;
+		color: var(--accentHover);
+		font-size: 13px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+
+	.photoLabel {
+		color: var(--muted);
+		font-weight: 600;
+		font-size: 14px;
+	}
+</style>
