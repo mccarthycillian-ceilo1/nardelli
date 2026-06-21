@@ -3,14 +3,44 @@ import Layout from "../layouts/layouts.astro";
 import MapEmbed from "../components/MapEmbed.astro";
 ---
 
-<Layout title="Day Trips | Nardelli">
+<Layout title="Day Trips">
 	<h1>Day Trips</h1>
-	<p>Half-day / full-day, rainy day, family-friendly ideas.</p>
+	<p>
+		A collection of easy half‑day and full‑day trips from Nardelli. Each section includes suggested timing and parking,
+		and you can use the map at the bottom to explore pinned locations.
+	</p>
+
+	<h2>Nardelli Oil &amp; Wine</h2>
+	<p>
+		On our doorstep there is both an olive oil producer
+		(<a href="https://cooperativaoleificiopozzuolese.it/en/" target="_blank" rel="noopener noreferrer">Cooperativa Oleificio Pozzuolese</a>)
+		and a winery (<a href="https://cantinagoccia.com/" target="_blank" rel="noopener noreferrer">Cantina Goccia</a>).
+		Both offer tasting tours individually, or you can book a combined{" "}
+		<a href="https://cantinagoccia.com/wine-tour" target="_blank" rel="noopener noreferrer">Nardelli Experience</a>{" "}
+		where you do both over ~2.5 hours.
+	</p>
+
+	<ul>
+		<li><strong>Duration:</strong> 1 hour – 2.5 hours</li>
+		<li><strong>Drive time:</strong> ~1 minute</li>
+		<li><strong>Parking:</strong> on site (or walk)</li>
+	</ul>
+
+	<img
+		src="/photos/nardelli-olive-tree.jpg"
+		alt="Olive tree near Nardelli"
+		loading="lazy"
+		style="width:100%; max-width:680px; display:block; margin: 12px auto 0; border-radius: var(--radius); border: 1px solid var(--border);"
+	/>
+
+	<hr style="border:0; border-top:1px solid var(--border); margin: 26px 0;" />
 
 	<h2>Map</h2>
-<MapEmbed
-	title="Local Restaurants, Bars & Cafes"
-	src="https://www.google.com/maps/d/embed?mid=1s7yXs9jQ8JVRJrBzack_63GSfhvhT-E&ehbc=2E312F"
-/>
-</div>
+	<p style="color: var(--muted); margin-top: -6px;">
+		Tip: click pinned items on the map for extra detail.
+	</p>
+	<MapEmbed
+		title="Itineraries & Day Trips from Nardelli"
+		src="https://www.google.com/maps/d/embed?mid=1bSlZIm5F1gtxXZrPBz56KpEW5z8-GUk&ehbc=2E312F"
+	/>
 </Layout>
