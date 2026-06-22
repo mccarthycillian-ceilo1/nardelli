@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/layouts.astro";
+import MapEmbed from "../components/MapEmbed.astro";
+---
+
+<Layout title="Beaches, Pools & Water Activities">
+	<h1>Beaches, Pools &amp; Water Activities</h1>
+
+	<section class="heroCard">
+	<div class="introGrid">
+		<p>
+			Cooling down on very hot days is often needed. These are our go-to spots around Lake Trasimeno and nearby.
+		Waterparks in rural Italy are more relaxed than in Spain / Portugal and are often where local families get together / celebrate birthdays.
+		A good option if travelling with or without kids. Use the map at the bottom to see locations, notes, and any extra details.
+	</p>
+
+		<img
+			src="/photos/lake-trasimeno.jpg"
+			alt="Lake Trasimeno"
+			loading="lazy"
+		/>
+	</div>
+</section>
+	
+
+	<h2>Beaches &amp; Pools</h2>
+	<ul>
+		<li>
+			<strong>Castiglione Beach, Bed &amp; Kayak Rental</strong><br />
+			Shallow entry and safe for kids. Small sandy stretch (lake bottom can be muddy/silty). Sunbeds available, plus pedalo/kayak rental.
+			Drop into Pescatore Cafe nearby for a coffee or drink for the full “beach day” vibe.
+		</li>
+
+		<li>
+			<strong>Alternative Castiglione Beach</strong><br />
+			Another easy shallow-entry option near town with a small sandy stretch and a relaxed lakeside feel.
+		</li>
+
+		<li>
+			<strong>Kitemaniak – Kitesurfing &amp; SUP</strong><br />
+			Local kitesurfing and SUP school—good if you want something more active on the lake.
+		</li>
+
+		<li>
+			<strong>Spiaggia di Punta Navaccia (Tuoro)</strong><br />
+			An alternative lakeside stop with a different view and closer to the islands. A little run down, but fine for a visit.
+		</li>
+
+		<li>
+			<strong>Sualzo Beach &amp; Pool</strong><br />
+			A nice pool with a great lake view—ideal if you’re on the north side of the lake (Cortona / Passignano area).
+			Darker sand on the beach and some kayak/SUP rental options nearby. Easy to pair with Passignano’s lakefront cafés.
+		</li>
+
+		<li>
+			<strong>Piscina Comunale di Chianciano Terme (Outdoor pools &amp; diving)</strong> —
+			<a href="http://www.virtusbuonconvento.it/chianciano-terme.html" target="_blank" rel="noopener noreferrer">website</a><br />
+			Big outdoor municipal swimming pool with a local feel. Great for serious swimmers/divers, plus a kids pool—handy after exploring the Tuscan countryside.
+		</li>
+	</ul>
+
+	<h2>Waterparks</h2>
+
+	<ul>
+		<li>
+			<strong>Laguna Park (Waterpark)</strong> —
+			<a href="http://www.lagunaparktrasimeno.it/" target="_blank" rel="noopener noreferrer">website</a><br />
+			Spotlessly clean, family-friendly waterpark. Slides for kids, big grass area, football/volleyball, bar and restaurant.
+			A great “very hot day” option.
+		</li>
+
+		<li>
+			<strong>Oasi del Tezio Acquapark (Colle Umberto)</strong> —
+			<a href="https://oasideltezio.it/" target="_blank" rel="noopener noreferrer">website</a><br />
+			Nice waterpark with a good local vibe. Decent slides for families (including one suitable for older kids), plus a good bar, small playground and volleyball courts.
+		</li>
+
+		<li>
+			<strong>Tavernelle Aquatic Park</strong> —
+			<a href="http://www.azzurrapiscine.it/aquapark-tavernelle/" target="_blank" rel="noopener noreferrer">website</a><br />
+			Good mix of slides and diving boards for younger and older kids. Bar/snacks onsite. Nice to pair with sunset drinks in Panicale on the way home.
+		</li>
+	</ul>
+	<h2>Map</h2>
+	<p style="color: var(--muted); margin-top: -6px;">
+		Tip: click pinned items on the map for extra detail.
+	</p>
+	<MapEmbed
+		title="Pools & Water Activities"
+		src="https://www.google.com/maps/d/embed?mid=1a2oM7W-xnqOsIZRi-pOtbrEa2Mw4N6k&ehbc=2E312F"
+	/>
+
+	<style>
+		ul { padding-left: 20px; }
+		li { margin: 10px 0; }
+	
+.heroCard {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 16px;
+	margin: 12px 0 18px;
+}
+
+.introGrid {
+	display: grid;
+	gap: 16px;
+	align-items: start;
+}
+
+.introGrid p {
+	margin: 0;
+	color: var(--text);
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.introGrid img {
+	width: 100%;
+	height: 260px;          /* makes it look intentional */
+	object-fit: cover;      /* prevents awkward stretching */
+	display: block;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+}
+
+@media (min-width: 860px) {
+	.introGrid {
+		grid-template-columns: 1.25fr 0.75fr;
+		align-items: center; /* vertically aligns text + image */
+	}
+	.introGrid img {
+		height: 240px;
+	}
+}
+
+ul { padding-left: 20px; }
+li { margin: 12px 0; }
+li br { display: block; margin: 6px 0 0; }
+
+    </style>
+</Layout>

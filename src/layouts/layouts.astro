@@ -197,6 +197,26 @@ nav a:hover {
 	border: 0;
 	display: block;
 }
+
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.topbar {
+	min-width: 0;
+}
+
+.nav-desktop {
+	min-width: 0;
+}
+
+/* Allow the nav row to wrap instead of creating horizontal scroll */
+.nav-desktop {
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
 </style>
 	</head>
 	<body>
@@ -211,6 +231,7 @@ nav a:hover {
 				<a href="/essentials">Castiglione del Lago: Essentials &amp; Sights</a>
 				<a href="/restaurants">Nearby Restaurants</a>
 				<a href="/day-trips">Day Trips</a>
+				<a href="/water">Pools &amp; Water</a>
 				<a href="/leaving-checklist">Leaving Checklist</a>
 			</nav>
 
@@ -225,6 +246,7 @@ nav a:hover {
 			<a href="/essentials">Castiglione del Lago: Essentials &amp; Sights</a>
 			<a href="/restaurants">Nearby Restaurants</a>
 			<a href="/day-trips">Day Trips</a>
+			<a href="/water">Pools &amp; Water</a>
 			<a href="/leaving-checklist">Leaving Checklist</a>
 		</nav>
 	</div>
