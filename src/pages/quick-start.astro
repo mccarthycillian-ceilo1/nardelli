@@ -3,23 +3,26 @@ import Layout from "../layouts/layouts.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 ---
 
-<Layout title="Quick Start | Nardelli">
+<Layout title="Quick Start">
 	<section class="hero">
 		<h1>Quick Start</h1>
 		<p class="subhead">
-            <section class="section">
-	<h2>First 10 minutes</h2>
-	<ol class="checklist">
-		<li><a href="#parking">Park (don’t block the laneway)</a></li>
-		<li><a href="#keys">Get keys from the lockbox</a></li>
-		<li><a href="#electricity">Turn on electricity (fuse box)</a></li>
-		<li><a href="#mains">Turn on water &amp; gas mains</a></li>
-		<li><a href="#hot-water">Check hot water (boiler button)</a></li>
-		<li><a href="#hob">Check the gas hob is working</a></li>
-	</ol>
-</section>
 			This page lists the essentials for arriving, getting set up, and settling in during your first 10 minutes.
 		</p>
+
+		<section class="section">
+			<div class="checklistCard">
+				<h2>First 10 minutes</h2>
+				<ol class="checklist">
+					<li><a href="#parking">Park (don’t block the laneway)</a></li>
+					<li><a href="#keys">Get keys from the lockbox</a></li>
+					<li><a href="#electricity">Turn on electricity (fuse box)</a></li>
+					<li><a href="#mains">Turn on water &amp; gas mains</a></li>
+					<li><a href="#hot-water">Check hot water (boiler button)</a></li>
+					<li><a href="#hob">Check the gas hob is working</a></li>
+				</ol>
+			</div>
+		</section>
 	</section>
 
 	<section class="section">
@@ -28,143 +31,167 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 			<strong>Nardelli Nespolo</strong><br />
 			Località Nardelli, 31, 06061 Nardelli PG, Italy
 		</div>
-		<!-- Optional later: add an "Open in Google Maps" link here -->
 	</section>
 
 	<section class="section" id="parking">
-		<h2>Parking</h2>
-		<p>
-			Please park close to the front door. <strong>Do not block the laneway at the side of the house</strong>
-			— this access route is needed for neighbours and farming access.
-		</p>
-		<img
-	src="/photos/Parking.jpeg"
-	alt="Parking near the front door (do not block the laneway)"
-	loading="lazy"
-	style="width:100%; max-width:680px; display:block; margin: 12px auto 0; border-radius: var(--radius); border: 1px solid var(--border);"
-/>
+		<div class="stepCard">
+			<div class="stepText">
+				<h2>Parking</h2>
+				<p>
+					Please park close to the front door. <strong>Do not block the laneway at the side of the house</strong>
+					— this access route is needed for neighbours and farming access.
+				</p>
+			</div>
+
+			<div class="stepMedia">
+				<img
+					class="instructionPhoto"
+					src="/photos/Parking.jpeg"
+					alt="Parking near the front door (do not block the laneway)"
+					loading="lazy"
+				/>
+			</div>
+		</div>
 	</section>
 
 	<section class="section" id="keys">
-		<h2>Keys (lockbox)</h2>
-		<p>
-			There is a lockbox attached to the frame of the garden gate. It contains the key to the{" "}
-			<strong>front door</strong> and the <strong>garden gate</strong>. You already have the code.
-		</p>
+		<div class="stepCard">
+			<div class="stepText">
+				<h2>Keys (lockbox)</h2>
+				<p>
+					There is a lockbox attached to the frame of the garden gate. It contains the key to the{" "}
+					<strong>front door</strong> and the <strong>garden gate</strong>. You already have the code.
+				</p>
 
-		<ul>
-			<li>
-				<strong>Front door key tip:</strong> to remove the key from the front door, you may need to turn it{" "}
-				<strong>half a turn back</strong> first.
-			</li>
-			<li>
-				<strong>Please leave the garden key in the lockbox</strong> (and scramble the lockbox code) unless
-				you are using it — the gardener may need access.
-			</li>
-		</ul>
+				<ul>
+					<li>
+						<strong>Front door key tip:</strong> to remove the key from the front door, you may need to turn it{" "}
+						<strong>half a turn back</strong> first.
+					</li>
+					<li>
+						<strong>Please leave the garden key in the lockbox</strong> (and scramble the lockbox code) unless
+						you are using it — the gardener may need access.
+					</li>
+				</ul>
+			</div>
 
-		<img
-	src="/photos/Lockbox.jpeg"
-	alt="Lockbox location"
-	loading="lazy"
-	style="width:100%; max-width:680px; display:block; margin: 12px auto 0; border-radius: var(--radius); border: 1px solid var(--border);"
-/>
+			<div class="stepMedia">
+				<img
+					class="instructionPhoto"
+					src="/photos/Lockbox.jpeg"
+					alt="Lockbox location"
+					loading="lazy"
+				/>
+			</div>
+		</div>
 	</section>
 
 	<section class="section" id="electricity">
-		<h2>Electricity (power)</h2>
-		<p>
-			The electricity will most likely be off on arrival. The fuse box is located <strong>just inside the front
-			door</strong>, on the wall as you enter the kitchen. Flick the switch <strong>up</strong> to turn the
-			power on.
-		</p>
-		<PhotoPlaceholder label="Fuse box + switch in the ON position" />
+		<div class="stepCard">
+			<div class="stepText">
+				<h2>Electricity (power)</h2>
+				<p>
+					The electricity will most likely be off on arrival. The fuse box is located <strong>just inside the front
+					door</strong>, on the wall as you enter the kitchen. Flick the switch <strong>up</strong> to turn the
+					power on.
+				</p>
+			</div>
+
+			<div class="stepMedia">
+				<PhotoPlaceholder label="Fuse box + switch in the ON position" />
+			</div>
+		</div>
 	</section>
 
 	<section class="section" id="mains">
-		<h2>Water &amp; gas (mains)</h2>
-		<p>
-			On arrival, the <strong>water and gas mains may be switched off</strong>. The key to open the mains
-			access is on a key hanger just inside the front door.
-		</p>
+		<div class="stepCard">
+			<div class="stepText">
+				<h2>Water &amp; gas (mains)</h2>
+				<p>
+					On arrival, the <strong>water and gas mains may be switched off</strong>. The key to open the mains
+					access is on a key hanger just inside the front door.
+				</p>
 
-		<ol>
-			<li>Open the Gas and Water mains access at the front of the house using the key.</li>
-			<li>Ensure both the <strong>gas</strong> and <strong>water</strong> are switched to the <strong>ON</strong> position.</li>
-			<li>
-				Once on, check the water flow, check hot water, and confirm the hob is working.
-			</li>
-		</ol>
-        <div id="hob"></div>
+				<ol>
+					<li>Open the Gas and Water mains access at the front of the house using the key.</li>
+					<li>
+						Ensure both the <strong>gas</strong> and <strong>water</strong> are switched to the <strong>ON</strong> position.
+					</li>
+					<li>Once on, check the water flow, check hot water, and confirm the hob is working.</li>
+				</ol>
 
-        <img
-	src="/photos/MainsLocation.jpeg"
-	alt="Gas and water mains access location"
-	loading="lazy"
-	style="width:100%; max-width:680px; display:block; margin: 12px auto 0; border-radius: var(--radius); border: 1px solid var(--border);"
-/>
-		<PhotoPlaceholder label="Gas mains — ON position" />
-		<PhotoPlaceholder label="Water mains — ON position" />
+				<div id="hob"></div>
 
-		<h3 id="hot-water">Hot water (boiler)</h3>
-		<p>
-			The button for the boiler is on the wall <strong>between the sink and the fridge</strong>. Once the mains
-			are on, check that hot water is working.
-		</p>
-		<PhotoPlaceholder label="Boiler / hot water button (between sink and fridge)" />
+				<p style="color: var(--muted); font-weight: 600; margin-top: 12px;">
+					You’ll find “ON position” photos here soon:
+				</p>
+				<PhotoPlaceholder label="Gas mains — ON position" />
+				<PhotoPlaceholder label="Water mains — ON position" />
+
+				<h3 id="hot-water">Hot water (boiler)</h3>
+				<p>
+					The button for the boiler is on the wall <strong>between the sink and the fridge</strong>. Once the mains
+					are on, check that hot water is working.
+				</p>
+				<PhotoPlaceholder label="Boiler / hot water button (between sink and fridge)" />
+			</div>
+
+			<div class="stepMedia">
+				<img
+					class="instructionPhoto"
+					src="/photos/MainsLocation.jpeg"
+					alt="Gas and water mains access location"
+					loading="lazy"
+				/>
+			</div>
+		</div>
 	</section>
 
 	<section class="section">
 		<h2>Windows &amp; shutters (mosquito nets)</h2>
 		<p>
-			Windows and shutters open from the inside. There is netting on the window frames to help keep out
-			mosquitos.
+			Windows and shutters open from the inside. There is netting on the window frames to help keep out mosquitos.
 		</p>
 		<ul>
 			<li>Lift/peel the net slightly from one corner to access the shutter latch.</li>
 			<li>Open the shutter, then re-cover the frame with the netting.</li>
 		</ul>
 		<p>
-			If you’re not visiting in July/August, windows and fans may be all that’s needed to cool the house down
-			in the evenings.
+			If you’re not visiting in July/August, windows and fans may be all that’s needed to cool the house down in the evenings.
 		</p>
 	</section>
 
 	<section class="section">
 		<h2>Air conditioning &amp; fans</h2>
 		<p>
-			There are portable air-con units in all rooms. Ensure the hose/cylinder at the back of the unit is
-			connected to the wall vent so hot air is directed outside.
+			There are portable air-con units in all rooms. Ensure the hose/cylinder at the back of the unit is connected to the wall vent so hot air is directed outside.
 		</p>
 		<p>
-			<strong>Tip:</strong> If all units are on at the same time (upstairs and downstairs), it can blow the
-			fuse. We recommend not running all units simultaneously. There are multiple fans you can use to
-			supplement.
+			<strong>Tip:</strong> If all units are on at the same time (upstairs and downstairs), it can blow the fuse. We recommend not running all units simultaneously.
+			There are multiple fans you can use to supplement.
 		</p>
 	</section>
 
-<section class="section">
-	<h2>If something doesn’t work…</h2>
-	<ul>
-		<li><strong>Power keeps tripping:</strong> don’t run all portable air-con units at the same time (try one floor at a time).</li>
-		<li><strong>No hot water:</strong> confirm water mains are ON, then check the boiler button (between sink and fridge).</li>
-		<li><strong>Gas hob not working:</strong> confirm the gas mains are fully ON.</li>
-		<li><strong>Front door key won’t come out:</strong> turn the key half a turn back, then remove.</li>
-	</ul>
-</section>
-    
+	<section class="section">
+		<h2>If something doesn’t work…</h2>
+		<ul>
+			<li><strong>Power keeps tripping:</strong> don’t run all portable air-con units at the same time (try one floor at a time).</li>
+			<li><strong>No hot water:</strong> confirm water mains are ON, then check the boiler button (between sink and fridge).</li>
+			<li><strong>Gas hob not working:</strong> confirm the gas mains are fully ON.</li>
+			<li><strong>Front door key won’t come out:</strong> turn the key half a turn back, then remove.</li>
+		</ul>
+	</section>
+
 	<section class="section">
 		<h2>Internet (Wi‑Fi)</h2>
 		<p>
-			There is <strong>no Wi‑Fi</strong> in the house and mobile reception varies by provider. If you struggle
-			for internet, consider an Italian eSIM (e.g. via Revolut or directly with a provider) after arriving.
+			There is <strong>no Wi‑Fi</strong> in the house and mobile reception varies by provider. If you struggle for internet, consider an Italian eSIM
+			(e.g. via Revolut or directly with a provider) after arriving.
 		</p>
 	</section>
 
-
-
 	<style>
-		.hero { margin-bottom: 12px; }
+		.hero { margin-bottom: 10px; }
 		.subhead { color: var(--muted); font-weight: 600; margin-top: -6px; }
 
 		.section { margin-top: 22px; }
@@ -178,49 +205,61 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 			padding: 14px;
 		}
 
-		.photo {
-			margin-top: 10px;
-			border: 1px dashed color-mix(in srgb, var(--border) 70%, var(--accent) 30%);
+		/* Checklist */
+		.checklistCard {
+			background: color-mix(in srgb, var(--accent) 8%, var(--card));
+			border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
 			border-radius: var(--radius);
-			background: color-mix(in srgb, var(--bg) 70%, var(--card) 30%);
-			padding: 12px;
+			padding: 14px 16px;
+			margin-top: 12px;
 		}
+		.checklistCard h2 { margin: 0 0 8px; }
+		.checklist { padding-left: 20px; margin: 0; }
+		.checklist li { margin: 8px 0; }
+		.checklist a { text-decoration: none; }
+		.checklist a:hover { text-decoration: underline; }
 
-		.photoInner {
+		/* Step cards */
+		.stepCard {
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 16px;
 			display: grid;
-			gap: 4px;
+			gap: 14px;
+			align-items: start;
+			margin-top: 14px;
+		}
+		@media (min-width: 860px) {
+			.stepCard {
+				grid-template-columns: 1.2fr 0.8fr;
+				align-items: center;
+			}
+		}
+		.stepCard h2 { margin: 0 0 6px; }
+		.stepText p, .stepText ul, .stepText ol { margin: 8px 0; }
+
+		.stepMedia {
+			display: flex;
+			justify-content: center;
+		}
+		@media (min-width: 860px) {
+			.stepMedia { justify-content: flex-end; }
 		}
 
-		.photoTitle {
-			font-weight: 800;
-			color: var(--accentHover);
-			font-size: 13px;
-			letter-spacing: 0.02em;
-			text-transform: uppercase;
+		/* Photos */
+		.instructionPhoto {
+			width: 100%;
+			max-width: 360px;
+			height: auto;
+			display: block;
+			border-radius: calc(var(--radius) - 2px);
+			border: 1px solid var(--border);
+			background: var(--bg);
 		}
 
-		.photoLabel {
-			color: var(--muted);
-			font-weight: 600;
-			font-size: 14px;
-		}
-
-		/* Keep lists readable on mobile */
+		/* Keep lists readable */
 		ul, ol { padding-left: 20px; }
 		li { margin: 6px 0; }
-	
-        .checklist {
-	padding-left: 20px;
-}
-.checklist li {
-	margin: 8px 0;
-}
-.checklist a {
-	text-decoration: none;
-}
-.checklist a:hover {
-	text-decoration: underline;
-}
-    
-    </style>
+	</style>
 </Layout>
