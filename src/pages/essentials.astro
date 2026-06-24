@@ -6,14 +6,27 @@ import MapEmbed from "../components/MapEmbed.astro";
 <Layout title="Castiglione del Lago: Essentials & Sights">
 	<h1>Castiglione del Lago: Essentials &amp; Sights</h1>
 
-	<p>
-		Welcome to Castiglione del Lago, a charming walled hill town on the shores of Lake Trasimeno. Once a strategic stronghold between Umbria and Tuscany, it later flourished under the della Corgna family in the 1500s—leaving behind a beautiful old town, fortress walls and Renaissance palace rooms to explore.[^https://en.wikipedia.org/wiki/Castiglione_del_Lago]
-	</p>
+<section class="heroCard">
+	<div class="introGrid">
+		<div>
+			<p>
+				Welcome to Castiglione del Lago, a charming walled hill town on the shores of Lake Trasimeno. Once a strategic stronghold between Umbria and Tuscany, it later flourished under the della Corgna family in the 1500s—leaving behind a beautiful old town, fortress walls and Renaissance palace rooms to explore.
+			</p>
 
-	<p>
-		This page highlights some of the best essentials and sights in Castiglione del Lago—perfect for an easy stroll, a relaxed lakeside afternoon, or a simple “what should we do today?” plan.
-	</p>
+			<p style="margin-bottom: 0;">
+				This page highlights some of the best essentials and sights in Castiglione del Lago—perfect for an easy stroll, a relaxed lakeside afternoon, or a simple “what should we do today?” plan.
+			</p>
+		</div>
 
+		<img
+			src="/photos/castiglione.jpeg"
+			alt="Castiglione del Lago"
+			loading="lazy"
+		/>
+	</div>
+</section>
+
+	
 	<div class="callout">
 		<h2 style="margin-top: 0;">Essentials at a glance</h2>
 		<ul>
@@ -77,5 +90,39 @@ import MapEmbed from "../components/MapEmbed.astro";
 		}
 		.callout ul { margin: 0; padding-left: 20px; }
 		.callout li { margin: 6px 0; }
-	</style>
+	
+    .heroCard {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 16px;
+	margin: 12px 0 18px;
+}
+
+.introGrid {
+	display: grid;
+	gap: 16px;
+	align-items: start;
+}
+
+.introGrid img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	display: block;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+}
+
+@media (min-width: 860px) {
+	.introGrid {
+		grid-template-columns: 1.25fr 0.75fr;
+		align-items: center;
+	}
+	.introGrid img {
+		height: 240px;
+	}
+}
+    
+    </style>
 </Layout>
