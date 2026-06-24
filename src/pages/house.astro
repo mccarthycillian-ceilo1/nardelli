@@ -3,19 +3,28 @@ import Layout from "../layouts/layouts.astro";
 import MapEmbed from "../components/MapEmbed.astro";
 ---
 
-<Layout title="Our House & Neighbours | Nardelli">
-	<h1>Our House &amp; Neighbours</h1>
-	<p>
-		This page includes general notes on the house, garden access, rubbish/recycling and — plus a map showing the house and  our nearby neighbours.
-	</p>
+<Layout title="Our House | Nardelli">
+	<h1>Our House</h1>
 
-<h2>House</h2>
-<p>
-	We hope you find everything you need for a comfortable stay at Nardelli. Clean bedsheets & towels should be folded on the beds (from the last guests). Beach towels (& beach toys for kids) are likely in the sitting room downstairs. In the kitchen cupboards and bathrooms you should find the usual basics easily.
-</p>
-<p>
-	Kitchen equipment includes a large fridge, a gas hob, an air fryer, a microwave, a toaster, a kettle, and an Italian espresso maker (Moka pot).
-</p>
+	<section class="heroCard">
+		<div class="introGrid">
+			<div>
+				<p>
+					We hope you find everything you need for a comfortable stay at Nardelli. Clean bedsheets & towels should be folded on the beds (from the last guests). Beach towels (& beach toys for kids) are likely in the sitting room downstairs. In the kitchen cupboards and bathrooms you should find the usual basics easily.
+				</p>
+
+				<p style="margin-bottom: 0;">
+					Kitchen equipment includes a large fridge, a gas hob, an air fryer, a microwave, a toaster, a kettle, and an Italian espresso maker (Moka pot).
+				</p>
+			</div>
+
+			<img
+				src="/photos/House.jpeg"
+				alt="Nardelli"
+				loading="lazy"
+			/>
+		</div>
+	</section>
 
 	<h2>Garden</h2>
 	<p>
@@ -43,4 +52,39 @@ import MapEmbed from "../components/MapEmbed.astro";
 		title="Nardelli – Our House & Neighbours"
 		src="https://www.google.com/maps/d/embed?mid=17GPJ5eNXHo-2HNj_KNS6r1HLe_Nhqlc&ehbc=2E312F"
 	/>
+
+	<style>
+		.heroCard {
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 16px;
+			margin: 12px 0 18px;
+		}
+
+		.introGrid {
+			display: grid;
+			gap: 16px;
+			align-items: start;
+		}
+
+		.introGrid img {
+			width: 100%;
+			height: 260px;
+			object-fit: cover;
+			display: block;
+			border-radius: calc(var(--radius) - 2px);
+			border: 1px solid var(--border);
+		}
+
+		@media (min-width: 860px) {
+			.introGrid {
+				grid-template-columns: 1.25fr 0.75fr;
+				align-items: center;
+			}
+			.introGrid img {
+				height: 240px;
+			}
+		}
+	</style>
 </Layout>
