@@ -76,13 +76,29 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 			</div>
 
 			<div class="stepMedia">
-				<img
-					class="instructionPhoto"
-					src="/photos/Lockbox.jpeg"
-					alt="Lockbox location"
-					loading="lazy"
-				/>
-			</div>
+	<div class="stepMedia">
+	<div class="mediaRow">
+		<img
+			class="instructionPhoto"
+			src="/photos/Lockbox.jpeg"
+			alt="Lockbox location"
+			loading="lazy"
+		/>
+
+		<video
+			class="instructionMedia"
+			src="/photos/KeyTurn.mp4"
+			controls
+			playsinline
+			muted
+			preload="metadata"
+		>
+			Sorry, your browser doesn’t support embedded videos.
+		</video>
+	</div>
+
+</div>
+</div>
 		</div>
 	</section>
 
@@ -98,7 +114,12 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 			</div>
 
 			<div class="stepMedia">
-				<PhotoPlaceholder label="Fuse box + switch in the ON position" />
+				<img
+	class="instructionPhoto"
+	src="/photos/Power.jpeg"
+	alt="Fuse box and power switch"
+	loading="lazy"
+/>
 			</div>
 		</div>
 	</section>
@@ -261,5 +282,40 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		/* Keep lists readable */
 		ul, ol { padding-left: 20px; }
 		li { margin: 6px 0; }
+
+.mediaRow {
+	display: grid;
+	gap: 10px;
+	justify-items: end;
+}
+
+/* Desktop: side-by-side */
+@media (min-width: 860px) {
+	.mediaRow {
+		grid-template-columns: 1fr 1fr;
+		align-items: start;
+		justify-items: end;
+	}
+}
+
+/* Video styling (match photo sizing) */
+.instructionMedia {
+	width: 100%;
+	max-width: 360px;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+	background: #000;
+	display: block;
+}
+
+.mediaCaption {
+	margin: 8px 0 0;
+	max-width: 720px; /* allows caption to sit under both items */
+	color: var(--muted);
+	font-size: 14px;
+	font-weight: 600;
+	text-align: right;
+}
+
 	</style>
 </Layout>
