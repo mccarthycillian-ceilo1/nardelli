@@ -125,48 +125,72 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 	</section>
 
 	<section class="section" id="mains">
-		<div class="stepCard">
-			<div class="stepText">
-				<h2>Water &amp; gas (mains)</h2>
-				<p>
-					On arrival, the <strong>water and gas mains may be switched off</strong>. The key to open the mains
-					access is on a key hanger just inside the front door.
-				</p>
+	<div class="stepCard">
+		<div class="stepText">
+			<h2>Water &amp; gas (mains)</h2>
+			<p>
+				On arrival, the <strong>water and gas mains may be switched off</strong>. The key to open the mains
+				access is on a key hanger just inside the front door.
+			</p>
 
-				<ol>
-					<li>Open the Gas and Water mains access at the front of the house using the key.</li>
-					<li>
-						Ensure both the <strong>gas</strong> and <strong>water</strong> are switched to the <strong>ON</strong> position.
-					</li>
-					<li>Once on, check the water flow, check hot water, and confirm the hob is working.</li>
-				</ol>
+			<ol>
+				<li>Open the Gas and Water mains access at the front of the house using the key.</li>
+				<li>
+					Ensure both the <strong>gas</strong> and <strong>water</strong> are switched to the <strong>ON</strong> position.
+				</li>
+				<li>Once on, check the water flow, check hot water, and confirm the hob is working.</li>
+			</ol>
 
-				<div id="hob"></div>
-
-				<p style="color: var(--muted); font-weight: 600; margin-top: 12px;">
-					You’ll find “ON position” photos here soon:
-				</p>
-				<PhotoPlaceholder label="Gas mains — ON position" />
-				<PhotoPlaceholder label="Water mains — ON position" />
-
-				<h3 id="hot-water">Hot water (boiler)</h3>
-				<p>
-					The button for the boiler is on the wall <strong>between the sink and the fridge</strong>. Once the mains
-					are on, check that hot water is working.
-				</p>
-				<PhotoPlaceholder label="Boiler / hot water button (between sink and fridge)" />
-			</div>
-
-			<div class="stepMedia">
-				<img
-					class="instructionPhoto"
-					src="/photos/MainsLocation.jpeg"
-					alt="Gas and water mains access location"
-					loading="lazy"
-				/>
-			</div>
+			<div id="hob"></div>
 		</div>
-	</section>
+
+		<div class="stepMedia">
+			<img
+				class="instructionPhoto mainsLocationPhoto"
+				src="/photos/MainsLocation.jpeg"
+				alt="Gas and water mains access location"
+				loading="lazy"
+			/>
+		</div>
+
+		<div class="stepFullWidth">
+			<p class="mainsLabel">Gas &amp; water switch positions:</p>
+
+			<div class="mainsGridWrap">
+				<div class="mainsGrid">
+					<div class="mainsCorner"></div>
+					<div class="mainsColHead">OFF</div>
+					<div class="mainsColHead">ON</div>
+
+					<div class="mainsRowHead">Gas</div>
+					<img class="mainsImg" src="/photos/GasOff.jpeg" alt="Gas mains OFF" loading="lazy" />
+					<img class="mainsImg" src="/photos/GasOn.jpeg" alt="Gas mains ON" loading="lazy" />
+
+					<div class="mainsRowHead">Water</div>
+					<img class="mainsImg" src="/photos/WaterOff.jpeg" alt="Water mains OFF" loading="lazy" />
+					<img class="mainsImg" src="/photos/WaterOn.jpeg" alt="Water mains ON" loading="lazy" />
+				</div>
+			</div>
+
+			<div class="boilerRow" id="hot-water">
+	<div>
+		<h3>Hot water (boiler)</h3>
+		<p>
+			The button for the boiler is on the wall <strong>between the boiler and the window. Once switched on you should have hot water whenever you use the hot tap. </strong>. Once the mains
+			are on, check that hot water is working.
+		</p>
+	</div>
+
+	<img
+		class="boilerPhoto"
+		src="/photos/Boiler.jpeg"
+		alt="Boiler / hot water button (between sink and fridge)"
+		loading="lazy"
+	/>
+</div>
+		</div>
+	</div>
+</section>
 
 	<section class="section">
 		<h2>Windows &amp; shutters (mosquito nets)</h2>
@@ -257,16 +281,26 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 				align-items: center;
 			}
 		}
+
+        .stepFullWidth {
+	grid-column: 1 / -1;
+	margin-top: 8px;
+}
+
 		.stepCard h2 { margin: 0 0 6px; }
 		.stepText p, .stepText ul, .stepText ol { margin: 8px 0; }
 
 		.stepMedia {
-			display: flex;
-			justify-content: center;
-		}
-		@media (min-width: 860px) {
-			.stepMedia { justify-content: flex-end; }
-		}
+	display: flex;
+	align-items: flex-start;   /* keeps media aligned to the top */
+	justify-content: flex-end; /* keeps media on the right */
+	gap: 10px;
+}
+
+.stepMedia img,
+.stepMedia video {
+	margin-top: 0;
+}
 
 		/* Photos */
 		.instructionPhoto {
@@ -317,5 +351,93 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 	text-align: right;
 }
 
+.mainsLocationPhoto {
+	max-width: 320px;
+}
+
+.mainsLabel {
+	margin: 0;
+	color: var(--muted);
+	font-weight: 700;
+}
+
+.mainsGridWrap {
+	display: flex;
+	justify-content: center;  /* centers the grid */
+	margin-top: 8px;
+}
+
+.mainsGrid {
+	display: grid;
+	grid-template-columns: 70px 1fr 1fr;
+	gap: 10px;
+	align-items: start;
+	width: 100%;
+	max-width: 520px;         /* prevents it spreading too wide */
+}
+
+.mainsCorner { height: 1px; }
+
+.mainsColHead {
+	font-weight: 800;
+	color: var(--accentHover);
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	font-size: 12px;
+	padding-left: 4px;
+}
+
+.mainsRowHead {
+	font-weight: 800;
+	color: var(--accentHover);
+	font-size: 13px;
+	padding-top: 6px;
+}
+
+.mainsImg {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+	background: var(--bg);
+	display: block;
+}
+
+.boilerPhoto {
+	width: 100%;
+	max-width: 280px;
+	height: auto;
+	display: block;
+	margin-top: 10px;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+	background: var(--bg);
+}
+
+.boilerRow {
+	margin-top: 12px;
+	display: grid;
+	gap: 12px;
+	align-items: start;
+}
+
+.boilerRow h3 {
+	margin: 0 0 6px;
+}
+
+.boilerRow p {
+	margin: 0;
+}
+
+@media (min-width: 860px) {
+	.boilerRow {
+		grid-template-columns: 1.2fr 0.8fr;
+		align-items: center;
+	}
+	.boilerRow .boilerPhoto {
+		justify-self: end;
+	}
+}
 	</style>
 </Layout>
