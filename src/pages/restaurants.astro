@@ -3,42 +3,105 @@ import Layout from "../layouts/layouts.astro";
 import MapEmbed from "../components/MapEmbed.astro";
 ---
 
-<Layout title="Nearby Restaurants" currentPath={Astro.url.pathname}>
-	<h2>Best Restaurants &amp; Bars</h2>
+<Layout title="Nearby Restaurants" currentPath={Astro.url.pathname}
 
-<ul>
-	<li>
-		Best restaurant in Castiglione del Lago:{" "}
-		<strong><a href="https://maps.app.goo.gl/zMW2GPK3mEPDhKAB9" target="_blank" rel="noopener noreferrer">Osteria Nova</a></strong>
-	</li>
-	<li>
-		Best pizza in Castiglione del Lago:{" "}
-		<strong><a href="https://maps.app.goo.gl/d4Gp6sy9Y1TftEox7" target="_blank" rel="noopener noreferrer">Ristorante La Cantina</a></strong>
-	</li>
-	<li>
-		Best pizza on the lake:{" "}
-		<strong><a href="https://maps.app.goo.gl/zcJmuCnH9tMAPqAm7" target="_blank" rel="noopener noreferrer">Giramondo Ristorante Pizzeria</a></strong>
-	</li>
-	<li>
-		Best beach bar:{" "}
-		<strong><a href="https://maps.app.goo.gl/DpFRrNCo9xxx5rFK8" target="_blank" rel="noopener noreferrer">Cafe Pescatore Praia</a></strong>
-	</li>
-	<li>
-		Best village setting:{" "}
-		<strong><a href="https://maps.app.goo.gl/btDQF23ZRfemdDbF7" target="_blank" rel="noopener noreferrer">Panicale</a></strong>
-	</li>
-	<li>
-		Best sushi:{" "}
-		<strong><a href="https://maps.app.goo.gl/SVa9ZSDdKi2U8Br27" target="_blank" rel="noopener noreferrer">Restaurant Sushi Mizu</a></strong>
-	</li>
-</ul>
+<section class="heroCard">
+	<div class="introGrid">
+		<div>
+            <h1>Best Restaurants &amp; Bars</h1>
+			<p>
+				One of the best parts of staying at Nardelli is eating your way around Umbria and Tuscany — the “green heart of Italy” on one side,
+				and some of the world’s most famous food and wine landscapes on the other. Keep an eye out for local favourites like <strong>torta al testo</strong>
+				(a warm, rustic flatbread), Umbria’s excellent olive oil, and the simple, seasonal dishes that make even a quick lunch feel special.
+				Across the Tuscan border, you’ll find <strong>pecorino</strong> (especially around Pienza), big, bold reds like <strong>Brunello di Montalcino</strong>,
+				and the region’s iconic <strong>Chianina</strong> beef. Whether you’re after an easy family pizza, a relaxed lakeside aperitivo, or a memorable dinner,
+				the places below are our go-to picks — and the map further down has extra notes.
+			</p>
 
-	<h2>Map</h2>
-    <p style="color: var(--muted); margin-top: -6px;">
+			<h2 style="margin-top: 14px;">Best Restaurants &amp; Bars</h2>
+			<ul class="bestList">
+            <li>
+                Best restaurant in Castiglione del Lago: <strong><a href="https://maps.app.goo.gl/zMW2GPK3mEPDhKAB9" target="_blank" rel="noopener noreferrer">Osteria Nova</a></strong>
+            </li>
+            <li>
+                Best pizza in Castiglione del Lago: <strong><a href="https://maps.app.goo.gl/d4Gp6sy9Y1TftEox7" target="_blank" rel="noopener noreferrer">Ristorante La Cantina</a></strong>
+            </li>
+            <li>
+                Best pizza on the lake: <strong><a href="https://maps.app.goo.gl/zcJmuCnH9tMAPqAm7" target="_blank" rel="noopener noreferrer">Giramondo Ristorante Pizzeria</a></strong>
+            </li>
+            <li>
+                Best beach bar: <strong><a href="https://maps.app.goo.gl/DpFRrNCo9xxx5rFK8" target="_blank" rel="noopener noreferrer">Cafe Pescatore Praia</a></strong>
+            </li>
+            <li>
+                Best village setting: <strong><a href="https://maps.app.goo.gl/btDQF23ZRfemdDbF7" target="_blank" rel="noopener noreferrer">Panicale</a></strong>
+            </li>
+            <li>
+                Best sushi: <strong><a href="https://maps.app.goo.gl/SVa9ZSDdKi2U8Br27" target="_blank" rel="noopener noreferrer">Restaurant Sushi Mizu</a></strong>
+            </li>
+        </ul>
+		</div>
+
+		<img
+			src="/photos/Restaurant.jpg"
+			alt="Food and wine in Umbria and Tuscany"
+			loading="lazy"
+		/>
+	</div>
+</section>
+
+
+
+<h2>Map</h2>
+<p style="color: var(--muted); margin-top: -6px;">
 	Click pinned items on the map for additional insight and detail.
 </p>
+
 <MapEmbed
 	title="Local Restaurants, Bars & Cafes"
 	src="https://www.google.com/maps/d/embed?mid=1s7yXs9jQ8JVRJrBzack_63GSfhvhT-E&ehbc=2E312F"
 />
+
+<style>
+	.heroCard {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 16px;
+		margin: 12px 0 18px;
+	}
+
+	.introGrid {
+		display: grid;
+		gap: 16px;
+		align-items: start;
+	}
+
+	.introGrid img {
+		width: 100%;
+		height: 260px;
+		object-fit: cover;
+		display: block;
+		border-radius: calc(var(--radius) - 2px);
+		border: 1px solid var(--border);
+	}
+
+	@media (min-width: 860px) {
+		.introGrid {
+			grid-template-columns: 1.1fr 0.9fr;
+			align-items: center;
+		}
+		.introGrid img {
+			height: 640px;
+		}
+	}
+
+	.bestList {
+		margin: 8px 0 0;
+		padding-left: 20px;
+	}
+
+	.bestList li {
+		margin: 8px 0;
+	}
+</style>
 </Layout>
