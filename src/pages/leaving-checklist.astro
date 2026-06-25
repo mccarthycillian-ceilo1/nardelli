@@ -3,23 +3,99 @@ import Layout from "../layouts/layouts.astro";
 ---
 
 <Layout title="Leaving Checklist | Nardelli" currentPath={Astro.url.pathname}>
-	<h1>Leaving Checklist</h1>
+	<h1>👋 A Presto <span class="h1Sub">(see you soon)</span></h1>
 
-<ul>
-	<li>
-		Wash &amp; dry sheets (<a href="https://maps.app.goo.gl/jUqQzZuZnMzdcGYz7" target="_blank" rel="noopener noreferrer">24 Hour Self Service Laundry - ensure you have cash</a>)
-	</li>
-	<li>
-		Clear / clean fridge &amp; cupboards of any perishable goods (it could be a long time until the next guest visits)
-	</li>
-	<li>Remove any bins or items for recycling</li>
-	<li>Turn off boiler switch in kitchen</li>
-	<li>Turn off water mains outside</li>
-	<li>Turn off gas mains outside</li>
-	<li>Close windows / shutters / door into the garden</li>
-	<li>Turn off all lights</li>
-	<li>Turn off the electricity (flip fuse switch down)</li>
-	<li>Lock front door (and garden gate if open)</li>
-	<li>Return keys to lockbox</li>
-</ul>
+<section class="heroCard">
+	<div class="leaveGrid">
+		<div>
+			<p>
+				We hope you’ve had a wonderful time in Nardelli. Rather than saying “ciao”, we say “a presto”
+				(<em>see you soon</em>) when leaving. Like us, you may have fallen in love with what Umbria &amp; Tuscany
+				has to offer and might return again sometime. Safe travels, and we hope to welcome you back again.
+			</p>
+
+			<p style="margin-bottom: 10px;">
+				A few quick steps before you go helps keep everything ready for the next visitor:
+			</p>
+
+            <h2>Leaving Checklist</h2>
+
+			<ul class="leaveList">
+				<li>
+					Wash &amp; dry sheets (<a href="https://maps.app.goo.gl/jUqQzZuZnMzdcGYz7" target="_blank" rel="noopener noreferrer">24 Hour Self Service Laundry</a>)
+				</li>
+				<li>Fold cleaned and dried sheets and leave them on the bed(s) for the next visitor</li>
+                <li>
+					Clear / clean fridge &amp; cupboards of any perishable goods (it could be a long time until the next guest visits)
+				</li>
+				<li>Remove any bins or items for recycling</li>
+				<li>Turn off boiler switch in kitchen</li>
+				<li>Turn off water mains outside</li>
+				<li>Turn off gas mains outside</li>
+				<li>Close windows / shutters / door into the garden</li>
+				<li>Turn off all lights</li>
+				<li>Turn off the electricity (flip fuse switch down)</li>
+				<li>Lock front door (and garden gate if open)</li>
+				<li>Return keys to lockbox</li>
+			</ul>
+		</div>
+
+		<img
+			src="/photos/Ciao.jpeg"
+			alt="A presto"
+			loading="lazy"
+		/>
+	</div>
+</section>
+
+	<style>
+        .heroCard {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin: 12px 0 18px;
+        }
+
+        .leaveGrid {
+            display: grid;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .leaveGrid img {
+            width: 100%;
+            height: 100%;
+            min-height: 360px; /* helps it span the message + list nicely */
+            object-fit: cover;
+            display: block;
+            border-radius: calc(var(--radius) - 2px);
+            border: 1px solid var(--border);
+        }
+
+        .leaveList {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .leaveList li {
+            margin: 8px 0;
+        }
+
+        @media (min-width: 860px) {
+            .leaveGrid {
+                grid-template-columns: 1.25fr 0.75fr;
+                align-items: stretch; /* makes the image column stretch vertically */
+            }
+        }
+
+.h1Sub {
+	color: var(--muted);
+	font-style: italic;
+	font-weight: 600;
+}
+
+    </style>
 </Layout>
+​
+

@@ -27,12 +27,25 @@ import MapEmbed from "../components/MapEmbed.astro";
 	</section>
 
 	<h2>Garden</h2>
-	<p>
-		You can access the garden via the sitting room (keys either by the back door or with the keys by the front door), or through the garden gate at the front of the house.
-	</p>
-	<p>
-		There are tables and chairs, clothes horses, and a paddling pool that can be used in the garden. It can be difficult to maintain the garden; if it’s dry, please water in the mornings or evenings if you can.
-	</p>
+
+<section class="subCard">
+	<div class="subGrid">
+		<div>
+			<p>
+				You can access the garden via the sitting room (keys either by the back door or with the keys by the front door), or through the garden gate at the front of the house.
+			</p>
+			<p style="margin-bottom: 0;">
+				Outside there are tables and chairs, a clothes horse, sun loungers and a luxurios pool (a paddling pool called "Blue Baby") if you fancy a very local dip. It can be difficult to maintain the garden; if it’s dry, please water in the mornings or evenings if you can.
+			</p>
+		</div>
+
+		<img
+			src="/photos/Pool.jpeg"
+			alt="Garden and pool"
+			loading="lazy"
+		/>
+	</div>
+</section>
 
 	<h2>Rubbish bins &amp; recycling</h2>
 	<p>
@@ -86,5 +99,39 @@ import MapEmbed from "../components/MapEmbed.astro";
 				height: 240px;
 			}
 		}
+
+        .subCard {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 16px;
+	margin: 10px 0 18px;
+}
+
+.subGrid {
+	display: grid;
+	gap: 16px;
+	align-items: start;
+}
+
+.subGrid img {
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+	display: block;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+}
+
+@media (min-width: 860px) {
+	.subGrid {
+		grid-template-columns: 1.25fr 0.75fr;
+		align-items: center;
+	}
+	.subGrid img {
+		height: 220px;
+	}
+}
+
 	</style>
 </Layout>
