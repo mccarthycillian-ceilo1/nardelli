@@ -3,7 +3,7 @@ import Layout from "../layouts/layouts.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 ---
 
-<Layout title="Quick Start">
+<Layout title="Quick Start" currentPath={Astro.url.pathname}>
 	<section class="hero">
 		<h1>Quick Start</h1>
 		<p class="subhead">

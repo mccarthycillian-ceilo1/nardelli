@@ -3,7 +3,7 @@ import Layout from "../layouts/layouts.astro";
 import MapEmbed from "../components/MapEmbed.astro";
 ---
 
-<Layout title="Nearby Restaurants">
+<Layout title="Nearby Restaurants" currentPath={Astro.url.pathname}>
 	<h2>Best Restaurants &amp; Bars</h2>
 
 <ul>

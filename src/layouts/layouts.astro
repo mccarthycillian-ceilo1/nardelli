@@ -1,6 +1,10 @@
 ---
-const { title = "Nardelli" } = Astro.props;
+const { title = "Nardelli", currentPath = "" } = Astro.props;
+
+const norm = (p: string) => (p.endsWith("/") && p !== "/" ? p.slice(0, -1) : p);
+const isActive = (href: string) => norm(currentPath) === norm(href);
 ---
+
 
 <!doctype html>
 <html lang="en">
@@ -10,7 +14,7 @@ const { title = "Nardelli" } = Astro.props;
 		<title>{title}</title>
 		<style>
 :root {
-	--max: 900px;
+	--max: 960px;
 
 --navBg: var(--accentHover);
 --navText: #fbfaf7;
@@ -55,7 +59,7 @@ header::after {
 .wrap {
 	max-width: var(--max);
 	margin: 0 auto;
-	padding: 12px 16px;
+	padding: 14px 12px;
 }
 
 .topbar {
@@ -66,21 +70,34 @@ header::after {
 }
 
 .brand {
-	font-weight: 800;
-	letter-spacing: 0.3px;
+	font-weight: 900;
+	letter-spacing: 0.6px;
+	font-size: 19px;           /* makes it stand out */
 	color: var(--navText);
 	text-decoration: none;
+	padding: 6px 10px;
+	border-radius: 10px;
 }
+
 .brand:hover {
-	color: rgba(251, 250, 247, 0.85);
+	background: var(--navHover);
 }
 
 main {
+	margin: 18px 0 0;
+	padding: 0 0 48px;
+}
+
+/* Main content container (this is the key) */
+main.mainWrap {
 	max-width: var(--max);
 	margin: 18px auto 0;
-	padding: 20px 16px 48px;
+	padding: 16px 12px 48px;
+	box-sizing: border-box;
 }
-main > :first-child {
+
+/* Each page root becomes the “card” */
+main.mainWrap > * {
 	background: var(--card);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
@@ -117,7 +134,7 @@ a {
 nav a {
 	text-decoration: none;
 	color: var(--navText);
-	padding: 6px 10px;
+	padding: 6px 8px;
 	border-radius: 10px;
 }
 
@@ -129,7 +146,7 @@ nav a:hover {
 /* Desktop nav */
 .nav-desktop {
 	display: none;
-	gap: 10px;
+	gap: 6px;
 	align-items: center;
 	flex-wrap: nowrap;
 	white-space: nowrap;
@@ -211,11 +228,12 @@ html, body {
 	min-width: 0;
 }
 
-/* Allow the nav row to wrap instead of creating horizontal scroll */
-.nav-desktop {
-	flex-wrap: wrap;
-	justify-content: flex-end;
+nav a.active {
+	background: rgba(251, 250, 247, 0.22);
+	color: var(--navText);
+	border: 1px solid rgba(251, 250, 247, 0.28);
 }
+
 
 </style>
 	</head>
@@ -226,13 +244,13 @@ html, body {
 			<a class="brand" href="/">Nardelli</a>
 
 			<nav class="nav-desktop" aria-label="Primary">
-				<a href="/quick-start">Quick Start</a>
-				<a href="/house">Our House</a>
-				<a href="/essentials">Castiglione del Lago</a>
-				<a href="/restaurants">Restaurants</a>
-				<a href="/day-trips">Day Trips</a>
-				<a href="/water">Pools &amp; Water</a>
-				<a href="/leaving-checklist">Leaving</a>
+				<a href="/quick-start" class={isActive("/quick-start") ? "active" : ""}>Quick Start</a>
+				<a href="/house" class={isActive("/house") ? "active" : ""}>Our House</a>
+				<a href="/essentials" class={isActive("/essentials") ? "active" : ""}>Castiglione del Lago</a>
+				<a href="/restaurants" class={isActive("/restaurants") ? "active" : ""}>Restaurants</a>
+				<a href="/day-trips" class={isActive("/day-trips") ? "active" : ""}>Day Trips</a>
+				<a href="/water" class={isActive("/water") ? "active" : ""}>Pools &amp; Water</a>
+				<a href="/leaving-checklist" class={isActive("/leaving-checklist") ? "active" : ""}>Leaving</a>
 			</nav>
 
 			<button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">
@@ -241,14 +259,14 @@ html, body {
 		</div>
 
 		<nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
-			<a href="/quick-start">Quick Start</a>
-			<a href="/house">Our House</a>
-			<a href="/essentials">Castiglione del Lago</a>
-			<a href="/restaurants">Restaurants</a>
-			<a href="/day-trips">Day Trips</a>
-			<a href="/water">Pools &amp; Water</a>
-			<a href="/leaving-checklist">Leaving Checklist</a>
-		</nav>
+			<a href="/quick-start" class={isActive("/quick-start") ? "active" : ""}>Quick Start</a>
+				<a href="/house" class={isActive("/house") ? "active" : ""}>Our House</a>
+				<a href="/essentials" class={isActive("/essentials") ? "active" : ""}>Castiglione del Lago</a>
+				<a href="/restaurants" class={isActive("/restaurants") ? "active" : ""}>Restaurants</a>
+				<a href="/day-trips" class={isActive("/day-trips") ? "active" : ""}>Day Trips</a>
+				<a href="/water" class={isActive("/water") ? "active" : ""}>Pools &amp; Water</a>
+				<a href="/leaving-checklist" class={isActive("/leaving-checklist") ? "active" : ""}>Leaving</a>
+			</nav>
 	</div>
 
 	<script is:inline>
@@ -273,9 +291,8 @@ html, body {
 	}
 </script>
 		</header>
-
-		<main>
-			<slot />
-		</main>
+<main class="mainWrap">
+	<slot />
+</main>
 	</body>
 </html>
