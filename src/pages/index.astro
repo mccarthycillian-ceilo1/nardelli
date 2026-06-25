@@ -8,7 +8,7 @@ import Layout from "../layouts/layouts.astro";
 	<p>
 		Welcome to <strong>Nardelli Nespolo</strong>, a homely escape on the Tuscan–Umbrian border. We hope you enjoy everything Umbria and Tuscany have to offer — and that the house makes a perfect base for exploring the area at your own pace.
 		We want everyone who stays at Nardelli to have a wonderful experience and to fall in love with this corner of Italy the way we have.<br><br>
-		Nardelli was built by <strong>Billy McCarthy</strong> back in <strong>19XX</strong>, and it became a place that Billy and his partner <strong>Des</strong> truly cherished. They shared it generously with friends and family, and guests were always welcomed with open arms.
+		Nardelli was built by <strong>Billy McCarthy</strong> back in <strong>19XX</strong>, and it became a place that Billy and his partner Des truly cherished. They shared it generously with friends and family, and guests were always welcomed with open arms.
 		Billy passed away in <strong>2016</strong>, but the house was left to the wider family to continue enjoying and sharing. We’ve all grown very fond of Nardelli and the surrounding area — and we hope you will too.
 	</p>
 <p style="margin-top: -6px; color: var(--muted); font-weight: 600;">
@@ -19,5 +19,64 @@ import Layout from "../layouts/layouts.astro";
 <p>
 	We created this website to help you settle into Nardelli and get acquainted with everything it has to offer. It covers the essentials about the house and the local area, along with our recommendations for nearby restaurants, bars and day trips. And when it’s time to say goodbye, please don’t forget to use the <strong>Leaving Checklist</strong> before you go.
 </p>
-	
+
+<section class="heroCard">
+	<div class="collage">
+		<img class="tile tileHero" src="/photos/House.jpeg" alt="Nardelli" loading="lazy" />
+		<img class="tile" src="/photos/HouseFront.jpeg" alt="House front" loading="lazy" />
+		<img class="tile" src="/photos/Kitchen.jpeg" alt="Kitchen" loading="lazy" />
+		<img class="tile tileWide" src="/photos/Build1.jpeg" alt="House being built" loading="lazy" />
+		<img class="tile tileWide" src="/photos/Build2.jpeg" alt="House being built" loading="lazy" />
+	</div>
+</section>
+
+	<style>
+
+	.heroCard {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 16px;
+		margin: 12px 0 18px;
+	}
+
+	.collage {
+		display: grid;
+		gap: 10px;
+		grid-template-columns: 2fr 1fr 1fr;
+		grid-auto-rows: 150px;
+	}
+
+	.tile {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		border-radius: calc(var(--radius) - 2px);
+		border: 1px solid var(--border);
+		background: var(--bg);
+	}
+
+	/* Make House.jpeg the prominent tile */
+	.tileHero {
+		grid-row: span 2;
+	}
+
+	/* Make the build photos sit as a “story row” underneath */
+	.tileWide {
+		grid-column: span 1;
+	}
+
+	@media (max-width: 859px) {
+		.collage {
+			grid-template-columns: 1fr;
+			grid-auto-rows: 220px;
+		}
+		.tileHero {
+			grid-row: auto;
+		}
+	}
+
+</style>
+|
 </Layout>
