@@ -10,6 +10,11 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 			This page lists the essentials for arriving, getting set up, and settling in during your first 10 minutes.
 		</p>
 
+        <p class="homeNote">
+	Nardelli is our home away from home, shared with family and friends rather than run as rental accommodation.
+	You may find the odd quirk or personal touch, but we hope everything feels comfortable, welcoming and easy to settle into.
+</p>
+
 		<section class="section">
 			<div class="checklistCard">
 				<h2>First 10 minutes</h2>
@@ -452,5 +457,15 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 		justify-self: end;
 	}
 }
+
+.homeNote {
+	background: color-mix(in srgb, var(--accent) 8%, var(--card));
+	border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+	border-radius: var(--radius);
+	padding: 12px 14px;
+	color: var(--text);
+	font-weight: 600;
+}
+
 	</style>
 </Layout>
