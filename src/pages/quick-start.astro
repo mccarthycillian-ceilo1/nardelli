@@ -156,7 +156,7 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 				<li>
 					Ensure both the <strong>gas</strong> and <strong>water</strong> are switched to the <strong>ON</strong> position.
 				</li>
-				<li>Once on, check the water flow, check hot water, and confirm the hob is working.</li>
+				<li>Once on, check the water flow, check hot water, and confirm the hob is working (there is an additional lever on the wall beside the hob that may need to be turned on too).</li>
 			</ol>
 
 			<div id="hob"></div>
@@ -181,8 +181,8 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 					<div class="mainsColHead">ON</div>
 
 					<div class="mainsRowHead">Gas</div>
-					<img class="mainsImg" src="/photos/GasOff.jpeg" alt="Gas mains OFF" loading="lazy" />
-					<img class="mainsImg" src="/photos/GasOn.jpeg" alt="Gas mains ON" loading="lazy" />
+					<img class="mainsImg mainsImgTop" src="/photos/GasOff.jpeg" alt="Gas mains OFF" loading="lazy" />
+                    <img class="mainsImg mainsImgTop" src="/photos/GasOn.jpeg" alt="Gas mains ON" loading="lazy" />
 
 					<div class="mainsRowHead">Water</div>
 					<img class="mainsImg" src="/photos/WaterOff.jpeg" alt="Water mains OFF" loading="lazy" />
@@ -402,14 +402,19 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 	text-transform: uppercase;
 	letter-spacing: 0.03em;
 	font-size: 12px;
-	padding-left: 4px;
+	text-align: center;
+	align-self: center;
 }
 
 .mainsRowHead {
 	font-weight: 800;
 	color: var(--accentHover);
 	font-size: 13px;
-	padding-top: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 150px; /* match .mainsImg height */
+	text-align: center;
 }
 
 .mainsImg {
@@ -465,6 +470,10 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 	padding: 12px 14px;
 	color: var(--text);
 	font-weight: 600;
+}
+
+.mainsImgTop {
+	object-position: center top;
 }
 
 	</style>
