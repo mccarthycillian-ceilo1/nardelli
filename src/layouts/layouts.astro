@@ -220,6 +220,10 @@ html, body {
 	overflow-x: hidden;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .topbar {
 	min-width: 0;
 }
@@ -234,10 +238,39 @@ nav a.active {
 	border: 1px solid rgba(251, 250, 247, 0.28);
 }
 
+.backToTop {
+	position: fixed;
+	right: 14px;
+	bottom: 14px;
+	z-index: 20;
+	padding: 10px 12px;
+	border-radius: 999px;
+	background: var(--accentHover);
+	color: var(--navText);
+	text-decoration: none;
+	font-weight: 800;
+	font-size: 14px;
+	box-shadow: 0 4px 12px rgba(31, 41, 55, 0.18);
+	border: 1px solid var(--navBorder);
+}
+
+.backToTop:hover {
+	background: var(--accent);
+	color: var(--navText);
+}
+
+/* Show only on mobile/tablet */
+@media (max-width: 859px) {
+	.backToTop {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
 
 </style>
 	</head>
-	<body>
+	<body id="top">
 		<header>
 	<div class="wrap">
 		<div class="topbar">
@@ -294,5 +327,8 @@ nav a.active {
 <main class="mainWrap">
 	<slot />
 </main>
+
+<a href="#top" class="backToTop" aria-label="Back to top">↑ Top</a>
+
 	</body>
 </html>
